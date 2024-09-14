@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
 
 
 @Data
-@ValidationStatusCode(code = "520")
 public class UserInfoCommand {
     @NotNull(message = "userId is null !")
     private Long userId;
