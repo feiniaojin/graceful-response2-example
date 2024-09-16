@@ -2,7 +2,7 @@ package com.feiniaojin.gracefuresponse.example.controller;
 
 import com.feiniaojin.gracefulresponse.api.ValidationStatusCode;
 import com.feiniaojin.gracefuresponse.example.dto.*;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 @RestController
 @RequestMapping("/v")
 @Slf4j
-@Tag(name = "参数校验场景演示接口", description = "演示GracefulResponse对参数校验的支持")
+@Api(value = "参数校验场景演示接口", tags = "演示GracefulResponse对参数校验的支持")
 public class ValidationController {
 
     /**

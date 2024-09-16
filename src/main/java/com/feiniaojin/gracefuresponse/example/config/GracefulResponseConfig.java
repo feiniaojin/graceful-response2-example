@@ -17,8 +17,4 @@ public class GracefulResponseConfig extends AbstractExceptionAliasRegisterConfig
         aliasRegister.doRegisterExceptionAlias(AliasOuterException.class);
     }
 
-    @Bean
-    public IntCodeResponseBodyAdvice intCodeResponseBodyAdvice() {
-        return new IntCodeResponseBodyAdvice();
-    }
 }

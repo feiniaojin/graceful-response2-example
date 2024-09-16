@@ -1,7 +1,7 @@
 package com.feiniaojin.gracefuresponse.example.dto;
 
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,12 +13,12 @@ import lombok.Data;
  */
 @Data
 @Builder
-@Tag(name = "用户信息", description = "用户信息视图对象")
+@ApiModel(description = "用户信息视图对象")
 public class UserInfoView {
 
-    @Schema(name = "id", description = "用户id", type = "long")
+    @ApiModelProperty(name = "用户id")
     private Long id;
 
-    @Schema(description = "用户名", type = "string")
+    @ApiModelProperty(name = "用户名")
     private String name;
 }

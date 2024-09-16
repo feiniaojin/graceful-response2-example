@@ -41,7 +41,8 @@ spring:
     view:
       suffix: .html
       prefix: /
-
+    pathmatch:
+      matching-strategy: ant_path_matcher
 logging:
   level:
     com.feiniaojin: DEBUG

@@ -3,7 +3,8 @@ package com.feiniaojin.gracefuresponse.example.controller;
 import com.feiniaojin.gracefulresponse.GracefulResponse;
 import com.feiniaojin.gracefulresponse.GracefulResponseDataException;
 import com.feiniaojin.gracefuresponse.example.exceptions.ExceptionEnum;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/gr")
-@Tag(name = "GracefulResponse工具类演示接口", description = "演示GracefulResponse工具类的使用")
+@Api(value = "GracefulResponse工具类演示接口", tags = "演示GracefulResponse工具类的使用")
 public class GracefulResponseController {
 
     /**

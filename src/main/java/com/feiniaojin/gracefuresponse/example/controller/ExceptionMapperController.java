@@ -3,7 +3,7 @@ package com.feiniaojin.gracefuresponse.example.controller;
 import com.feiniaojin.gracefuresponse.example.dto.UserInfoView;
 import com.feiniaojin.gracefuresponse.example.exceptions.ReplaceMsgException;
 import com.feiniaojin.gracefuresponse.example.service.ExampleService;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +22,7 @@ import javax.annotation.Resource;
 @RequestMapping("/em")
 @Slf4j
 @Validated
-@Tag(name = "@ExceptionMapper注解案例接口", description = "演示@ExceptionMapper注解的使用")
+@Api(value = "@ExceptionMapper注解案例接口")
 public class ExceptionMapperController {
 
     @Resource

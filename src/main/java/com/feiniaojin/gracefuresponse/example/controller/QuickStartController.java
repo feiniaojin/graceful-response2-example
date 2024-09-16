@@ -5,12 +5,9 @@ import com.feiniaojin.gracefulresponse.data.Response;
 import com.feiniaojin.gracefuresponse.example.dto.PageBeanX;
 import com.feiniaojin.gracefuresponse.example.dto.UserInfoQuery;
 import com.feiniaojin.gracefuresponse.example.dto.UserInfoView;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.ArraySchema;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -37,7 +34,7 @@ import java.util.Map;
 @RequestMapping("/qs")
 @Slf4j
 @Validated
-@Tag(name = "快速入门", description = "Graceful Response基本使用")
+@Api(value = "快速入门", tags = "Graceful Response基本使用")
 public class QuickStartController {
 
     @Resource
@@ -60,10 +57,9 @@ public class QuickStartController {
      * @return
      */
     @GetMapping("/get")
-    @ApiResponse(responseCode = "200", description = "查询成功",
-            content = @Content(schema = @Schema(implementation = UserInfoView.class)))
-    @Operation(summary = "查询用户信息",
-            description = "根据ID查询用户信息")
+    @ApiResponse(code = 200, message = "查询成功")
+    @ApiOperation(value = "查询用户信息",
+            notes = "根据ID查询用户信息")
     public UserInfoView get(UserInfoQuery dto) {
         return UserInfoView.builder().id(1L).name("name" + dto.getUserId()).build();
     }
@@ -76,10 +72,9 @@ public class QuickStartController {
      * @return
      */
     @GetMapping("/list")
-    @ApiResponse(responseCode = "200", description = "查询成功",
-            content = @Content(array = @ArraySchema(schema = @Schema(implementation = UserInfoView.class))))
-    @Operation(summary = "查询用户信息列表",
-            description = "查询用户信息列表")
+    @ApiResponse(code = 200, message = "查询成功")
+    @ApiOperation(value = "查询用户信息列表",
+            notes = "查询用户信息列表")
     public List<UserInfoView> list(UserInfoQuery dto) {
         List<UserInfoView> list = new ArrayList<>();
         for (long i = 1; i < 10L; i++) {
@@ -95,9 +90,9 @@ public class QuickStartController {
      * @return
      */
     @GetMapping("/pageList")
-    @ApiResponse(responseCode = "200", description = "查询成功")
-    @Operation(summary = "分页查询用户信息列表",
-            description = "分页查询用户信息列表")
+    @ApiResponse(code = 200, message = "查询成功")
+    @ApiOperation(value = "分页查询用户信息列表",
+            notes = "分页查询用户信息列表")
     public Page<UserInfoView> pageList(Pageable pageable) {
         List<UserInfoView> list = new ArrayList<>();
         for (long i = 0; i < 10L; i++) {
@@ -113,9 +108,9 @@ public class QuickStartController {
      * @return
      */
     @GetMapping("/pageListGr")
-    @ApiResponse(responseCode = "200", description = "查询成功")
-    @Operation(summary = "分页查询用户信息列表",
-            description = "分页查询用户信息列表")
+    @ApiResponse(code = 200, message = "查询成功")
+    @ApiOperation(value = "分页查询用户信息列表",
+            notes = "分页查询用户信息列表")
     public PageBeanX<UserInfoView> pageListGr(Pageable pageable) {
         List<UserInfoView> list = new ArrayList<>();
         for (long i = 0; i < 10L; i++) {
