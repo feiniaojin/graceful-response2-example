@@ -66,7 +66,7 @@ public class QuickStartController {
 
     /**
      * 测试成功返回
-     * http://localhost:9090/qs/get?id=1
+     * http://localhost:9090/qs/list
      *
      * @param dto 入参
      * @return
