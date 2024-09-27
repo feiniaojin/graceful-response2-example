@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 9168
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
@@ -26,7 +26,7 @@ graceful-response:
   exclude-exception-types:
     - com.feiniaojin.gracefuresponse.example.exceptions.ExcludeException
   exclude-exception-packages:
-    - "*.excludep.*"
+    - "*excludep*"
   exception-alias-config-map:
     "[com.feiniaojin.gracefuresponse.example.exceptions.outer.OuterException]":
         code: 5200
