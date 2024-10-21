@@ -31,6 +31,7 @@ graceful-response:
     "[com.feiniaojin.gracefuresponse.example.exceptions.outer.OuterException]":
         code: 5200
         httpStatusCode: 401
+        msg: "提示信息"
 
 #  json-http-message-converter: com.alibaba.fastjson2.support.spring6.http.converter.FastJsonHttpMessageConverter
 spring:

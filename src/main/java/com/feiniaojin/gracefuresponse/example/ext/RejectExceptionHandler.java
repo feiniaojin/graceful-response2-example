@@ -22,7 +22,7 @@ public class RejectExceptionHandler {
 
     @ExceptionHandler(value = ExcludeException.class)
     @ResponseBody
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Map<String, Object> exceptionHandler(Throwable throwable) {
         logger.info("进入外部的RejectExceptionHandler处理逻辑");
         Map<String, Object> result = new HashMap<>();
